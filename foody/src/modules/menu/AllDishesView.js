@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import DishCard from './DishCard';
 import s from './AllDishes.module.css';
 
-const AllDishesView = ({ menu, match, location }) => (
+const AllDishesView = ({ menu = [], match, location }) => (
   <>
     <ul className={s.menu}>
       {menu.map(dish => (
