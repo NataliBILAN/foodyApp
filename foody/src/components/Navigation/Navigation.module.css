@@ -1,0 +1,13 @@
+.nav {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+.nav_item {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: 'Patrick Hand', cursive;
+  color: #5c007a;
+  font-size: 30px;
+  margin-right: 20px;
+}

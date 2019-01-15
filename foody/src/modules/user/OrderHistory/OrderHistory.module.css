@@ -1,0 +1,33 @@
+.table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid blueviolet;
+  padding: 20px;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 16px;
+}
+.title {
+  text-transform: uppercase;
+  font-family: 'Patrick Hand', cursive;
+  color: #942eb6;
+  font-size: 20px;
+}
+.heading {
+  text-align: center;
+  font-size: 24px;
+  color: #fafafa;
+}
+.row {
+  text-align: center;
+}
+.heading_row {
+  background-color: #7b1fa2;
+}
+.row:nth-child(odd) {
+  background-color: #e495e4;
+}
+
+.row:nth-child(even) {
+  background-color: #b3e5fc;
+}
