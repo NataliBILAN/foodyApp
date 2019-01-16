@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import userNav from '../../../configs/user-nav';
 import s from './Dropdown.module.css';
 
@@ -8,13 +8,15 @@ const Dropdown = () => (
     <ul className={s.user_menu}>
       {userNav.map(item => (
         <li key={item.name}>
-          <Link to={item.path} className={s.menu_item}>
+          <NavLink to={item.path} className={s.menu_item}>
             {item.name}
-          </Link>
+          </NavLink>
         </li>
       ))}
     </ul>
-    <button type="button">Logout</button>
+    <button type="button" className={s.button}>
+      Logout
+    </button>
   </div>
 );
 

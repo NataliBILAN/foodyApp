@@ -1,5 +1,5 @@
 import React from 'react';
-import AllDishesContainer from '../../modules/menu/AllDishesContainer';
+import AllDishesContainer from '../../modules/menu/AllDishes/AllDishesContainer';
 import s from './Menu.module.css';
 
 const MenuPage = () => (

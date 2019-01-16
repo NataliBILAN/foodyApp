@@ -11,3 +11,10 @@
   font-size: 30px;
   margin-right: 20px;
 }
+.nav_item:hover {
+  color: #f06292;
+}
+.active {
+  color: #ff9800;
+  text-decoration: underline;
+}

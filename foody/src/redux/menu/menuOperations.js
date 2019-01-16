@@ -1,5 +1,5 @@
 import axios from 'axios';
-import actions from './action';
+import actions from './menuAction';
 
 // const fetchMenu = () => async dispatch => {
 //   dispatch(actions.fetchRequest());

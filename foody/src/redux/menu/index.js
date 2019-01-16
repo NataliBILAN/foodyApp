@@ -1,3 +1,3 @@
-export { default as action } from './action';
-export { default as operations } from './operations';
-export { default as selectors } from './selectors';
+export { default as action } from './menuAction';
+export { default as operations } from './menuOperations';
+export { default as selectors } from './menuSelectors';

@@ -6,7 +6,11 @@ const Navigation = ({ items = [] }) => (
   <ul className={s.nav}>
     {items.map(item => (
       <li key={item.name}>
-        <NavLink to={item.path} className={s.nav_item}>
+        <NavLink
+          to={item.path}
+          className={s.nav_item}
+          activeClassName={s.active}
+        >
           {item.name}
         </NavLink>
       </li>

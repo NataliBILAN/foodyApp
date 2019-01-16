@@ -1,4 +1,4 @@
-import types from './actionTypes';
+import types from './menuActionTypes';
 
 const fetchRequest = () => ({
   type: types.FETCH_REQUEST,

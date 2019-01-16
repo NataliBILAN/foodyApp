@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 // import queryString from 'query-string';
 import { connect } from 'react-redux';
-import AllDishes from './AllDishesView';
+import AllDishesView from './AllDishesView';
 
 // import CategorySelector from './CategorySelector';
 
 // import CurrentFilter from './CurrentFilter';
-import operations from '../../redux/menu/operations';
-import selectors from '../../redux/menu/selectors';
+import operations from '../../../redux/menu/menuOperations';
+import selectors from '../../../redux/menu/menuSelectors';
 
 // const getCategoryFromProps = props =>
 //   queryString.parse(props.location.search).category;
@@ -63,6 +63,7 @@ class AllDishesContainer extends Component {
   // };
 
   render() {
+    const { loading, error } = this.props;
     // const { menu, categories, loading, error } = this.state;
     // const { match } = this.props;
     // const options = categories.map(category => ({
@@ -85,15 +86,16 @@ class AllDishesContainer extends Component {
           <CurrentFilter category={currentValue} onClear={this.onClearFilter} />
         )} */}
 
-        <AllDishes menu={this.props.menu} />
-        {/* {loading && <h1>Loading....</h1>}
-        {error && <h1>Error!</h1>} */}
+        <AllDishesView menu={this.props.menu} />
+        {loading && <h1>Loading....</h1>}
+        {error && <h1>Error!</h1>}
       </>
     );
   }
 }
 const mapStateToProps = state => ({
   menu: selectors.getAllMenu(state),
+  loading: selectors.getLoading(state),
 });
 const mapDispatchToProps = {
   fetchMenu: operations.fetchMenu,
