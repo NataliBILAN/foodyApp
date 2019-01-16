@@ -7,7 +7,7 @@ import MenuItemView from './MenuItemView';
 import selectors from '../../redux/menu/menuSelectors';
 
 const mapStateToProps = (state, props) => ({
-  item: selectors.getMenuItemById(state, props.id),
+  item: selectors.getMenuItemById(state, props.match.params.id),
 });
 
 export default withRouter(
