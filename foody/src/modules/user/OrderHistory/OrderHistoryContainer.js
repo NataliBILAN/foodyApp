@@ -5,21 +5,30 @@ import getAllOrders from '../../../services/api';
 class OrderHistoryContainer extends Component {
   state = {
     orders: [],
+    loading: false,
+    error: null,
   };
 
-  componentDidMount() {
-    getAllOrders().then(orders => {
-      this.setState({ orders });
-    });
+  async componentDidMount() {
+    this.setState({ loading: true });
+
+    try {
+      const orders = await getAllOrders();
+
+      this.setState({ orders, loading: false });
+    } catch (error) {
+      this.setState({ error, loading: false });
+    }
   }
 
   render() {
-    const { orders } = this.state;
+    const { orders, error, loading } = this.state;
     return (
-      <OrderHistoryList
-        orderHistory={orders}
-        // onShowMoreInfo={this.showMoreInfo}
-      />
+      <>
+        {error && <h1>Error</h1>}
+        {loading && <h1>Loading</h1>}
+        <OrderHistoryList orderHistory={orders} />
+      </>
     );
   }
 }
