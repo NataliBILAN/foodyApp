@@ -9,14 +9,7 @@ function categoriesReducer(state = [], { type, payload }) {
       return state;
   }
 }
-function filterReducer(state = '', { type, payload }) {
-  switch (type) {
-    case types.CHANGE_FILTER:
-      return payload;
-    default:
-      return state;
-  }
-}
+
 function loadingReducer(state = false, { type }) {
   switch (type) {
     case types.FETCH_REQUEST:
@@ -48,5 +41,4 @@ export default combineReducers({
   items: categoriesReducer,
   loading: loadingReducer,
   error: errorReducer,
-  filter: filterReducer,
 });

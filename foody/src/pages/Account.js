@@ -1,6 +1,6 @@
 import React from 'react';
 import Account from '../modules/user/Account/Account';
-import image from '../components/AppHeader/assets/avatar.jpeg';
+import image from '../modules/user/assets/avatar.jpeg';
 
 const AccountPage = () => (
   <div>

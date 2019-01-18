@@ -5,7 +5,7 @@ import navItems from '../../configs/main-nav';
 import Navigation from '../Navigation/Navigation';
 import s from './AppHeader.module.css';
 import UserMenu from '../../modules/user/UserMenu/UserMenu';
-import avatar from './assets/avatar.jpeg';
+import avatar from '../../modules/user/assets/avatar.jpeg';
 
 const AppHeader = () => (
   <header className={s.header}>

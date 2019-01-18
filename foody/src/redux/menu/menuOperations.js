@@ -19,4 +19,12 @@ const fetchMenu = () => dispatch => {
     .then(({ data }) => dispatch(actions.fetchSuccess(data)))
     .catch(error => dispatch(actions.fetchError(error)));
 };
-export default { fetchMenu };
+const fetchMenuByCategories = category => dispatch => {
+  dispatch(actions.fetchRequest());
+
+  axios
+    .get(`http://localhost:3000/menu?category=${category}`)
+    .then(({ data }) => dispatch(actions.fetchSuccess(data)))
+    .catch(error => dispatch(actions.fetchError(error)));
+};
+export default { fetchMenu, fetchMenuByCategories };

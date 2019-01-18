@@ -1,6 +1,6 @@
 import React, { PureComponent, createRef } from 'react';
 import Dropdown from '../Dropdown/Dropdown';
-import Avatar from '../Avatar/Avatar';
+import Avatar from '../assets/avatar.jpeg';
 import s from './UserMenu.module.css';
 
 export default class UserMenu extends PureComponent {

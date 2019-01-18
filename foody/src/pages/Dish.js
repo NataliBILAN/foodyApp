@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MenuItemContainer from '../modules/menu/MenuItemContainer';
+import MenuItemContainer from '../modules/menu/MenuItem/MenuItemContainer';
 
 const DishPage = () => (
   <div>
