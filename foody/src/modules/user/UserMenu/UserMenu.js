@@ -1,6 +1,7 @@
 import React, { PureComponent, createRef } from 'react';
 import Dropdown from '../Dropdown/Dropdown';
-import Avatar from '../assets/avatar.jpeg';
+// import Avatar from '../assets/lisa.png';
+import Avatar from '../Avatar/Avatar';
 import s from './UserMenu.module.css';
 
 export default class UserMenu extends PureComponent {
@@ -13,14 +14,6 @@ export default class UserMenu extends PureComponent {
   componentDidMount() {
     window.addEventListener('click', this.handleWindowClick);
   }
-
-  // Использую PureComponent (когда стэйт -примитивы), либо-shouldComponentUpdate=>чтобы не было лишнего рендеринга компонента
-
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   const { isDropdownOpen } = this.state;
-
-  //   return nextState.isDropdownOpen !== isDropdownOpen;
-  // }
 
   componentWillUnmount() {
     window.removeEventListener('click', this.handleWindowClick);
@@ -47,14 +40,16 @@ export default class UserMenu extends PureComponent {
 
   render() {
     const { isDropdownOpen } = this.state;
-    const { image, name } = this.props;
+    const { name } = this.props;
+    // const { image, name } = this.props;
     return (
       <div
         className={s.container}
         ref={this.containerRef}
         onClick={this.openDropdown}
       >
-        <Avatar image={image} />
+        {/* <Avatar image={image} /> */}
+        <Avatar />
         <p className={s.user_name}>{name}</p>
         {isDropdownOpen && <Dropdown />}
       </div>

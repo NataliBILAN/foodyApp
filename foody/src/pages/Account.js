@@ -1,12 +1,12 @@
 import React from 'react';
 import Account from '../modules/user/Account/Account';
-import image from '../modules/user/assets/avatar.jpeg';
+// import image from '../modules/user/assets/lisa.png';
 
 const AccountPage = () => (
   <div>
     <h2>AccountPage</h2>
     <Account
-      image={image}
+      // image={image}
       name="Homer Simpson"
       email="homersimpson@gmail"
       phone="89 963 254 24"
