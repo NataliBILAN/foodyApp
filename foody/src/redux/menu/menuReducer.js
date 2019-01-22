@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
 import types from './menuActionTypes';
 
-function menuReducer(state = [], { type, payload }) {
+function productsReducer(state = [], { type, payload }) {
   switch (type) {
     case types.FETCH_SUCCESS:
-      return payload;
+      return payload.ids.products;
+
     default:
       return state;
   }
@@ -45,7 +46,7 @@ function errorReducer(state = null, { type, payload }) {
 }
 
 export default combineReducers({
-  items: menuReducer,
+  products: productsReducer,
   loading: loadingReducer,
   error: errorReducer,
   filter: filterReducer,

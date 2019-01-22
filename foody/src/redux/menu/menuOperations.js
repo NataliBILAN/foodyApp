@@ -19,6 +19,7 @@ const fetchMenu = () => dispatch => {
     .then(({ data }) => dispatch(actions.fetchSuccess(data)))
     .catch(error => dispatch(actions.fetchError(error)));
 };
+
 const fetchMenuByCategories = category => dispatch => {
   dispatch(actions.fetchRequest());
 

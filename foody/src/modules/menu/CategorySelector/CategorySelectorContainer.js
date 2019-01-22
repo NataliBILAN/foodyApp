@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import queryString from 'query-string';
 
 import operations from '../../../redux/category/categoriesOperation';
-import selectors from '../../../redux/menu/menuSelectors';
+import { getMenuByCategories } from '../../../redux/menu/menuSelectors';
 
 import CategorySelectorView from './CategorySelectorView';
 
@@ -52,7 +52,7 @@ class CategorySelectorContainer extends Component {
   }
 }
 const mapStateToProps = state => ({
-  menu: selectors.getMenuByCategories,
+  menu: getMenuByCategories(state),
   categories: state.categories.items,
   loading: state.categories.loading,
 });

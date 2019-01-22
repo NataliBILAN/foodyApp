@@ -1,25 +1,27 @@
 import { createSelector } from 'reselect';
 
-const getAllMenu = state => state.menu.items;
+// const getAllMenu = state => state.menu.items;
 
-const getLoading = state => state.menu.loading;
+export const getLoading = state => state.menu.loading;
 
-// const getMenuItemById = (state, id) => {
-//   const menu = getAllMenu(state);
-//   return menu.find(item => item.id === Number(id));
-// };
+// export const getMenuItemById = createSelector(
+//   [(state, id) => id, getAllMenu],
+//   (id, menu) => menu.find(item => item.id === Number(id)),
+// );
+const getProductIds = state => state.menu.products;
 
-// [(state, id) => id, getAllPosts],
-//   (id, posts) => posts.find(post => post.id === id),
+const getProductsEntities = state => state.entities.products;
 
-const getMenuItemById = createSelector(
-  [(state, id) => id, getAllMenu],
-  (id, menu) => menu.find(item => item.id === Number(id)),
-);
-
-const getMenuByCategories = (state, category) => {
-  const menu = getAllMenu(state);
-  return menu.filter(item => item.category === category);
+export const getMenuItemById = (state, id) => {
+  const productEntities = getProductsEntities(state);
+  return productEntities[Number(id)];
 };
 
-export default { getAllMenu, getLoading, getMenuItemById, getMenuByCategories };
+export const getProducts = createSelector(
+  [getProductIds, getProductsEntities],
+  (ids, entities) => ids.map(id => entities[id]),
+);
+export const getMenuByCategories = (state, category) => {
+  const menu = getProducts(state);
+  return menu.filter(item => item.category === category);
+};

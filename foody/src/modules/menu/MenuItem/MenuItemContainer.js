@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import MenuItemView from './MenuItemView';
 
-import selectors from '../../../redux/menu/menuSelectors';
+import { getMenuItemById } from '../../../redux/menu/menuSelectors';
 
 class MenuItemContainer extends Component {
   handleGoBack = () => {
@@ -27,7 +27,7 @@ class MenuItemContainer extends Component {
 }
 
 const mapStateToProps = (state, props) => ({
-  item: selectors.getMenuItemById(state, props.match.params.id),
+  item: getMenuItemById(state, props.match.params.id),
 });
 
 export default withRouter(

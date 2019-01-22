@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import OrderHistoryList from './OrderHistoryList';
-import getAllOrders from '../../../services/api';
+import { getAllOrders } from '../../../services/api';
 
 class OrderHistoryContainer extends Component {
   state = {

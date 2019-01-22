@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import AllDishesView from './AllDishesView';
 
 import operations from '../../../redux/menu/menuOperations';
-import selectors from '../../../redux/menu/menuSelectors';
+import { getProducts, getLoading } from '../../../redux/menu/menuSelectors';
+import { addToCart } from '../../../redux/cart/cartAction';
 
 const getCategoryFromProps = props =>
   queryString.parse(props.location.search).category;
@@ -32,7 +33,10 @@ class AllDishesContainer extends Component {
 
     return (
       <>
-        <AllDishesView menu={this.props.menu} />
+        <AllDishesView
+          menu={this.props.menu}
+          addToCart={this.props.addToCart}
+        />
         {loading && <h1>Loading....</h1>}
         {error && <h1>Error!</h1>}
       </>
@@ -40,12 +44,13 @@ class AllDishesContainer extends Component {
   }
 }
 const mapStateToProps = state => ({
-  menu: selectors.getAllMenu(state),
-  loading: selectors.getLoading(state),
+  menu: getProducts(state),
+  loading: getLoading(state),
 });
 const mapDispatchToProps = {
   fetchMenu: operations.fetchMenu,
   fetchMenuByCategories: operations.fetchMenuByCategories,
+  addToCart,
 };
 export default withRouter(
   connect(

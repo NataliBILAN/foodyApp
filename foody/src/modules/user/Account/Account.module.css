@@ -1,6 +1,12 @@
 .wrapper {
   display: flex;
 }
+.wrapper_image {
+  width: 250px;
+}
+.image {
+  width: 100%;
+}
 .info,
 .update {
   flex-basis: 50%;

@@ -7,6 +7,7 @@ import MenuItemPage from './pages/Dish';
 import AboutPage from './pages/About';
 import ContactPage from './pages/Contact';
 import DeliveryPage from './pages/Delivery';
+import Cart from './components/Cart/CartContainer';
 import AccountPage from './pages/Account';
 import OrderHistoryPage from './pages/OrderHistory';
 import PlannerPage from './pages/Planner';
@@ -24,6 +25,7 @@ const App = () => (
         <Route path={routes.ABOUT} component={AboutPage} />
         <Route path={routes.CONTACT} component={ContactPage} />
         <Route path={routes.DELIVERY} component={DeliveryPage} />
+        <Route path={routes.CART} component={Cart} />
         <Route path={routes.ACCOUNT} component={AccountPage} />
         <Route path={routes.ORDER_HISTORY} component={OrderHistoryPage} />
         <Route path={routes.PLANNER} component={PlannerPage} />

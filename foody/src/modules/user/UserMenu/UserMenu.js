@@ -1,6 +1,6 @@
 import React, { PureComponent, createRef } from 'react';
 import Dropdown from '../Dropdown/Dropdown';
-// import Avatar from '../assets/lisa.png';
+import image from '../assets/lisa.png';
 import Avatar from '../Avatar/Avatar';
 import s from './UserMenu.module.css';
 
@@ -41,15 +41,15 @@ export default class UserMenu extends PureComponent {
   render() {
     const { isDropdownOpen } = this.state;
     const { name } = this.props;
-    // const { image, name } = this.props;
+
     return (
       <div
         className={s.container}
         ref={this.containerRef}
         onClick={this.openDropdown}
       >
-        {/* <Avatar image={image} /> */}
-        <Avatar />
+        <Avatar image={image} />
+
         <p className={s.user_name}>{name}</p>
         {isDropdownOpen && <Dropdown />}
       </div>
