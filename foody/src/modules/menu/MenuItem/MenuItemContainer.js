@@ -9,7 +9,7 @@ import { getMenuItemById } from '../../../redux/menu/menuSelectors';
 class MenuItemContainer extends Component {
   handleGoBack = () => {
     const { state } = this.props.location;
-    const { category } = this.props;
+    // const { category } = this.props;
 
     if (state) {
       return this.props.history.push(state.from);
@@ -17,7 +17,7 @@ class MenuItemContainer extends Component {
 
     this.props.history.push({
       pathname: '/menu',
-      search: `?category=${category}`,
+      search: ``,
     });
   };
 

@@ -23,7 +23,11 @@ const AllDishesView = ({ menu = [], match, location, addToCart }) => (
               // addToCart={() => addToCart(dish.id)}
             />
           </Link>
-          <button type="button" onClick={() => addToCart(dish.id)}>
+          <button
+            type="button"
+            onClick={() => addToCart(dish.id)}
+            className={s.button}
+          >
             Add to cart
           </button>
         </li>

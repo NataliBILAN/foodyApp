@@ -11,8 +11,8 @@ const MenuItemView = ({ item = {}, onGoBack }) => (
     <p>Ингридиенты: {item.ingredients}</p>
     <p>Категория: {item.category}</p>
     <p>Цена: {item.price}</p>
-    <button type="button" onClick={onGoBack}>
-      Назад к меню
+    <button type="button" onClick={onGoBack} className={s.button}>
+      Back to menu
     </button>
   </div>
 );

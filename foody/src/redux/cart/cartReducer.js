@@ -9,11 +9,10 @@ function ids(state = [], { type, payload }) {
     case actionTypes.REMOVE_FROM_CART:
       return state.filter(id => id !== payload.id);
 
-    case actionTypes.DECREMENT_AMOUNT:
+    case actionTypes.INCREMENT_AMOUNT:
       return state.includes(payload.id) ? state : [...state, payload.id];
 
-    // case actionTypes.INCREMENT_AMOUNT:
-    //   return state.filter(id => id === payload.id);
+    // case actionTypes.DECREMENT_AMOUNT:
 
     default:
       return state;
@@ -36,13 +35,14 @@ function amount(state = [], { type, payload }) {
     case actionTypes.DECREMENT_AMOUNT:
       return {
         ...state,
-        [payload.id]: state[payload.id] ? state[payload.id] + 1 : 1,
+        [payload.id]:
+          state[payload.id] > 1 ? state[payload.id] - 1 : state[payload.id],
       };
 
     case actionTypes.INCREMENT_AMOUNT:
       return {
         ...state,
-        [payload.id]: state[payload.id] ? state[payload.id] - 1 : 1,
+        [payload.id]: state[payload.id] + 1,
       };
 
     default:

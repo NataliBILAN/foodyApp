@@ -24,7 +24,7 @@ class AllDishesContainer extends Component {
 
     this.props.fetchMenuByCategories(nextCategory);
     if (nextCategory === undefined) {
-      this.fetchItems(nextCategory);
+      this.props.fetchMenu();
     }
   }
 

@@ -3,8 +3,14 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import queryString from 'query-string';
 
+import CurrentFilter from './CurrentFilter';
+
 import operations from '../../../redux/category/categoriesOperation';
 import { getMenuByCategories } from '../../../redux/menu/menuSelectors';
+import {
+  getAllCategories,
+  getCategoriesLoading,
+} from '../../../redux/category/categoriesSelectors';
 
 import CategorySelectorView from './CategorySelectorView';
 
@@ -22,6 +28,13 @@ class CategorySelectorContainer extends Component {
     this.props.history.push({
       pathname: this.props.location.pathname,
       search: `category=${category.value}`,
+    });
+  };
+
+  onClearFilter = () => {
+    this.props.history.push({
+      pathname: this.props.location.pathname,
+      search: ``,
     });
   };
 
@@ -44,17 +57,17 @@ class CategorySelectorContainer extends Component {
           value={currentOption}
           onChange={this.handleCategoryChange}
         />
-        {/* {currentValue === undefined ? null : (
-                    <CurrentFilter category={currentValue} onClear={this.onClearFilter} />
-                )} */}
+        {currentValue === undefined ? null : (
+          <CurrentFilter category={currentValue} onClear={this.onClearFilter} />
+        )}
       </>
     );
   }
 }
 const mapStateToProps = state => ({
   menu: getMenuByCategories(state),
-  categories: state.categories.items,
-  loading: state.categories.loading,
+  categories: getAllCategories(state),
+  loading: getCategoriesLoading(state),
 });
 const mapDispatchToProps = {
   fetchCategories: operations.fetchCategories,

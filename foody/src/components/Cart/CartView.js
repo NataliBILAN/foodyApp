@@ -13,11 +13,11 @@ const CartView = ({
           <tr key={id}>
             <td>{name}</td>
             <td>
-              <button type="button" onClick={() => incrementAmount(id)}>
+              <button type="button" onClick={() => decrementAmount(id)}>
                 -
               </button>
               {amount}
-              <button type="button" onClick={() => decrementAmount(id)}>
+              <button type="button" onClick={() => incrementAmount(id)}>
                 +
               </button>
             </td>
