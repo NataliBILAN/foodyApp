@@ -9,6 +9,12 @@ export const getCartProductsAmount = createSelector(
 );
 const getProductsEntities = state => state.entities.products;
 
+export const getTotalAmount = createSelector(
+  [getCartProductIds, getCartProductAmounts, getProductsEntities],
+  (ids, amounts, entities) =>
+    ids.reduce((acc, id) => acc + entities[id].price * amounts[id], 0),
+);
+
 export const getCartProducts = createSelector(
   [getCartProductIds, getCartProductAmounts, getProductsEntities],
   (ids, amounts, entities) =>

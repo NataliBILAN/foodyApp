@@ -1,6 +1,9 @@
 import { connect } from 'react-redux';
 import CartView from './CartView';
-import { getCartProducts } from '../../redux/cart/cartSelectors';
+import {
+  getCartProducts,
+  getTotalAmount,
+} from '../../redux/cart/cartSelectors';
 import {
   removeFromCart,
   decrementAmount,
@@ -9,6 +12,7 @@ import {
 
 const mstp = state => ({
   products: getCartProducts(state),
+  total: getTotalAmount(state),
 });
 const mdtp = { removeFromCart, decrementAmount, incrementAmount };
 
