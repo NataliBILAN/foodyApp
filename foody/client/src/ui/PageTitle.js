@@ -5,4 +5,5 @@ export const PageTitle = styled.h2`
   color: #5c007a;
   font-size: 30px;
   margin: 0 0 60px;
+  text-align: center;
 `;

@@ -12,6 +12,8 @@ import Cart from './components/Cart/CartContainer';
 import AccountPage from './pages/Account';
 import OrderHistoryPage from './pages/OrderHistory';
 import PlannerPage from './pages/Planner';
+import SignUpPage from './pages/SingUp';
+import SignInPage from './pages/SignIn';
 
 import routes from './configs/routes';
 import s from './App.module.css';
@@ -27,6 +29,8 @@ const App = () => (
         <Route path={routes.ABOUT} component={AboutPage} />
         <Route path={routes.CONTACT} component={ContactPage} />
         <Route path={routes.DELIVERY} component={DeliveryPage} />
+        <Route path={routes.SIGNUP} component={SignUpPage} />
+        <Route path={routes.SINGIN} component={SignInPage} />
         <Route path={routes.CART} component={Cart} />
         <Route path={routes.ACCOUNT} component={AccountPage} />
         <Route path={routes.ORDER_HISTORY} component={OrderHistoryPage} />
