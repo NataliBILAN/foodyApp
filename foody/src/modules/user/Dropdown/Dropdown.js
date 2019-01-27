@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import userNav from '../../../configs/user-nav';
 import s from './Dropdown.module.css';
+import { Button } from '../../../ui/Button';
 
 const Dropdown = () => (
   <div className={s.dropdown}>
@@ -14,9 +15,7 @@ const Dropdown = () => (
         </li>
       ))}
     </ul>
-    <button type="button" className={s.button}>
-      Logout
-    </button>
+    <Button>Logout</Button>
   </div>
 );
 

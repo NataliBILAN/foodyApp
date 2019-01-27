@@ -1,8 +1,9 @@
 import React from 'react';
+import { PageTitle } from '../ui/PageTitle';
 
 const AboutPage = () => (
   <div>
-    <h2>About us</h2>
+    <PageTitle>About us</PageTitle>
   </div>
 );
 export default AboutPage;

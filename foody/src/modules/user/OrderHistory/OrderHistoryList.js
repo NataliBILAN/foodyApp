@@ -1,9 +1,10 @@
 import React from 'react';
 import s from './OrderHistory.module.css';
+import { PageTitle } from '../../../ui/PageTitle';
 
 const OrderHistoryList = ({ orderHistory }) => (
   <div>
-    <h2 className={s.title}>What you ordered</h2>
+    <PageTitle>What you ordered</PageTitle>
     <table className={s.table}>
       <thead>
         <tr className={s.heading_row}>

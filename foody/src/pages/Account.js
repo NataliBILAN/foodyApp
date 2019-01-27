@@ -1,9 +1,10 @@
 import React from 'react';
 import Account from '../modules/user/Account/Account';
+import { PageTitle } from '../ui/PageTitle';
 
 const AccountPage = () => (
   <div>
-    <h2>AccountPage</h2>
+    <PageTitle>AccountPage</PageTitle>
     <Account
       // image={image}
       name="Lisa Simpson"

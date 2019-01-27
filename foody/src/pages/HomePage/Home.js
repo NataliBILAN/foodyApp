@@ -1,8 +1,9 @@
 import React from 'react';
+import { PageTitle } from '../../ui/PageTitle';
 
 const HomePage = () => (
   <div>
-    <h2>Doughnut Fun Facts</h2>
+    <PageTitle>Doughnut Fun Facts</PageTitle>
     <p>
       The internet is full of fabulous facts about everything from current
       events to the history basket weaving and doughnut fun facts. As we

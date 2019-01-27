@@ -1,8 +1,9 @@
 import React from 'react';
+import { PageTitle } from '../ui/PageTitle';
 
 const DeliveryPage = () => (
   <div>
-    <h2>Delivery page</h2>
+    <PageTitle>Delivery page</PageTitle>
   </div>
 );
 export default DeliveryPage;

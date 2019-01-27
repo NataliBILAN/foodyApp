@@ -1,11 +1,11 @@
 import React from 'react';
 import AllDishesContainer from '../../modules/menu/AllDishes/AllDishesContainer';
 import CategorySelectorContainer from '../../modules/menu/CategorySelector/CategorySelectorContainer';
-import s from './Menu.module.css';
+import { PageTitle } from '../../ui/PageTitle';
 
 const MenuPage = () => (
   <div>
-    <h2 className={s.title}>Our menu</h2>
+    <PageTitle>Our menu</PageTitle>
     <CategorySelectorContainer />
     <AllDishesContainer />
   </div>

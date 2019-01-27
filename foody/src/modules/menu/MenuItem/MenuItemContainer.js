@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import MenuItemView from './MenuItemView';
 
 import { getMenuItemById } from '../../../redux/menu/menuSelectors';
+import { addToCart } from '../../../redux/cart/cartAction';
 
 class MenuItemContainer extends Component {
   handleGoBack = () => {
@@ -22,7 +23,13 @@ class MenuItemContainer extends Component {
   };
 
   render() {
-    return <MenuItemView onGoBack={this.handleGoBack} item={this.props.item} />;
+    return (
+      <MenuItemView
+        onGoBack={this.handleGoBack}
+        item={this.props.item}
+        addToCart={this.props.addToCart}
+      />
+    );
   }
 }
 
@@ -30,9 +37,11 @@ const mapStateToProps = (state, props) => ({
   item: getMenuItemById(state, props.match.params.id),
 });
 
+const mapdispatchtoprops = { addToCart };
+
 export default withRouter(
   connect(
     mapStateToProps,
-    null,
+    mapdispatchtoprops,
   )(MenuItemContainer),
 );

@@ -1,8 +1,9 @@
 import React from 'react';
+import { PageTitle } from '../ui/PageTitle';
 
 const ContactPage = () => (
   <div>
-    <h2>Contact us</h2>
+    <PageTitle>Contact us</PageTitle>
   </div>
 );
 export default ContactPage;
