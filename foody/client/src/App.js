@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import AppHeader from './components/AppHeader/AppHeader';
 import HomePage from './pages/HomePage/Home';
@@ -9,35 +10,49 @@ import AboutPage from './pages/About';
 import ContactPage from './pages/Contact';
 import DeliveryPage from './pages/Delivery';
 import Cart from './components/Cart/CartContainer';
-import AccountPage from './pages/Account';
+import AccountPage from './pages/AccountPage/AccountContainer';
 import OrderHistoryPage from './pages/OrderHistory';
 import PlannerPage from './pages/Planner';
 import SignUpPage from './pages/SingUp';
 import SignInPage from './pages/SignIn';
-
 import routes from './configs/routes';
-import s from './App.module.css';
+import ProtectedRoute from './components/ProtectedRoute'
+import { refreshCurrentUser } from './redux/auth/authOperations';
 
-const App = () => (
-  <Fragment>
-    <AppHeader />
-    <div className={s.container}>
-      <Switch>
-        <Route exact path={routes.HOME} component={HomePage} />
-        <Route exact path={routes.MENU} component={MenuPage} />
-        <Route path={routes.MENU_ITEM} component={MenuItemPage} />
-        <Route path={routes.ABOUT} component={AboutPage} />
-        <Route path={routes.CONTACT} component={ContactPage} />
-        <Route path={routes.DELIVERY} component={DeliveryPage} />
-        <Route path={routes.SIGNUP} component={SignUpPage} />
-        <Route path={routes.SINGIN} component={SignInPage} />
-        <Route path={routes.CART} component={Cart} />
-        <Route path={routes.ACCOUNT} component={AccountPage} />
-        <Route path={routes.ORDER_HISTORY} component={OrderHistoryPage} />
-        <Route path={routes.PLANNER} component={PlannerPage} />
-      </Switch>
-    </div>
-  </Fragment>
-);
 
-export default App;
+class App extends Component {
+  componentDidMount() {
+    this.props.refreshCurrentUser();
+  }
+  render() {
+    return (
+      <Fragment>
+        <AppHeader />
+        <div>
+          <Switch>
+            <Route exact path={routes.HOME} component={HomePage} />
+            <Route exact path={routes.MENU} component={MenuPage} />
+            <Route path={routes.MENU_ITEM} component={MenuItemPage} />
+            <Route path={routes.ABOUT} component={AboutPage} />
+            <Route path={routes.CONTACT} component={ContactPage} />
+            <Route path={routes.DELIVERY} component={DeliveryPage} />
+            <ProtectedRoute exact path={routes.CART} component={Cart} />
+            <ProtectedRoute path={routes.ACCOUNT} component={AccountPage} />
+            <ProtectedRoute path={routes.ORDER_HISTORY} component={OrderHistoryPage} />
+            <ProtectedRoute path={routes.PLANNER} component={PlannerPage} />
+            <Route exact path={routes.SIGNUP} component={SignUpPage} />
+            <Route exact path={routes.SINGIN} component={SignInPage} />
+          </Switch>
+        </div>
+      </Fragment>
+    )
+  }
+
+};
+
+const mapDispatch = { refreshCurrentUser };
+
+export default connect(
+  null,
+  mapDispatch
+)(App);

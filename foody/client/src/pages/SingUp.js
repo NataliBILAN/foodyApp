@@ -1,6 +1,7 @@
 import React from 'react';
 import { PageTitle } from '../ui/PageTitle';
 import SingUpForm from '../modules/user/AuthForms/SingUpForm';
+import WithAuth from '../components/hoc/WithAuth';
 
 const SignUpPage = () => (
   <div>
@@ -9,4 +10,4 @@ const SignUpPage = () => (
   </div>
 );
 
-export default SignUpPage;
+export default WithAuth(SignUpPage);

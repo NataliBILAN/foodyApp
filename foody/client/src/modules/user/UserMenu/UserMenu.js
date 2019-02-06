@@ -1,5 +1,5 @@
 import React, { PureComponent, createRef } from 'react';
-import Dropdown from '../Dropdown/Dropdown';
+import Dropdown from '../Dropdown/DropdownContainer';
 import image from '../assets/lisa.png';
 import Avatar from '../Avatar/Avatar';
 import s from './UserMenu.module.css';

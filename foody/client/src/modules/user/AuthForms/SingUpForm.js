@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import { Form, Input, Label } from './Common';
 import { Button } from '../../../ui/Button';
+import { signUp } from '../../../redux/auth/authOperations';
 
 const INITIAL_STATE = { name: '', email: '', password: '' };
 
-export default class SingUpForm extends Component {
+class SingUpForm extends Component {
   state = {
     ...INITIAL_STATE,
   };
@@ -63,3 +64,9 @@ export default class SingUpForm extends Component {
     );
   }
 }
+
+const mdts = { onSubmit: signUp };
+export default connect(
+  null,
+  mdts,
+)(SingUpForm);

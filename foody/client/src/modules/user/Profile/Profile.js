@@ -1,7 +1,7 @@
 import React from 'react';
-import s from './Account.module.css';
+import s from './Profile.module.css';
 
-const Account = ({ name, phone, email }) => (
+const Profile = ({ name, phone, email }) => (
   <div className={s.wrapper}>
     <div className={s.info}>
       <div className={s.wrapper_image}>
@@ -25,4 +25,4 @@ const Account = ({ name, phone, email }) => (
     </div>
   </div>
 );
-export default Account;
+export default Profile;
