@@ -6,6 +6,7 @@ import queryString from 'query-string';
 import CurrentFilter from './CurrentFilter';
 
 import operations from '../../../redux/category/categoriesOperation';
+// import { fetchMenuByCategories } from '../../../redux/menu/menuOperations'
 import { getMenuByCategories } from '../../../redux/menu/menuSelectors';
 import {
   getAllCategories,

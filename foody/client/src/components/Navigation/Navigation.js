@@ -1,20 +1,43 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import s from './Navigation.module.css';
+import styled from 'styled-components'
 
 const Navigation = ({ items = [] }) => (
-  <ul className={s.nav}>
+  <Nav>
     {items.map(item => (
       <li key={item.name}>
-        <NavLink
+        <StyledNavLink
           to={item.path}
-          className={s.nav_item}
-          activeClassName={s.active}
+        // activeClassName="active"
         >
           {item.name}
-        </NavLink>
+        </StyledNavLink>
       </li>
     ))}
-  </ul>
+  </Nav>
 );
+
+const Nav = styled.ul`
+  display: flex;
+  list-style: none;
+  align-items: center;
+`;
+
+const StyledNavLink = styled(NavLink)`
+text-transform:uppercase;
+text-decoration:none;
+font-family: 'Patrick Hand', cursive;
+font-size: 30px;
+margin-right: 20px;
+
+&:hover{
+  color: #f06292;
+}
+`
+// &: active{
+// color: #ff9800;
+// text - decoration: underline;
+// };
+
+
 export default Navigation;

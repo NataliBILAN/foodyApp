@@ -9,15 +9,8 @@ function productsReducer(state = [], { type, payload }) {
     default:
       return state;
   }
-}
-function filterReducer(state = '', { type, payload }) {
-  switch (type) {
-    case types.CHANGE_FILTER:
-      return payload;
-    default:
-      return state;
-  }
-}
+};
+
 function loadingReducer(state = false, { type }) {
   switch (type) {
     case types.FETCH_REQUEST:
@@ -30,7 +23,7 @@ function loadingReducer(state = false, { type }) {
     default:
       return state;
   }
-}
+};
 
 function errorReducer(state = null, { type, payload }) {
   switch (type) {
@@ -43,11 +36,10 @@ function errorReducer(state = null, { type, payload }) {
     default:
       return state;
   }
-}
+};
 
 export default combineReducers({
   products: productsReducer,
   loading: loadingReducer,
   error: errorReducer,
-  filter: filterReducer,
 });

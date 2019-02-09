@@ -6,6 +6,7 @@ ${reset}
 
 body {
   font-family: 'Patrick Hand';
+  font-size: 18px;
 }
 `;
 

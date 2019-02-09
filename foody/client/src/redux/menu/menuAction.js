@@ -24,9 +24,5 @@ const fetchError = error => ({
   type: types.FETCH_ERROR,
   payload: error,
 });
-const changeFilter = search => ({
-  type: types.CHANGE_FILTER,
-  payload: search,
-});
 
-export default { fetchRequest, fetchSuccess, fetchError, changeFilter };
+export default { fetchRequest, fetchSuccess, fetchError };

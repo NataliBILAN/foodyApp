@@ -19,7 +19,7 @@ function ids(state = [], { type, payload }) {
   }
 }
 
-function amount(state = [], { type, payload }) {
+function amount(state = {}, { type, payload }) {
   switch (type) {
     case actionTypes.ADD_TO_CART:
       return {

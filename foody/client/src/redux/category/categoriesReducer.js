@@ -8,7 +8,7 @@ function categoriesReducer(state = [], { type, payload }) {
     default:
       return state;
   }
-}
+};
 
 function loadingReducer(state = false, { type }) {
   switch (type) {

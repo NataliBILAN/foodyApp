@@ -8,6 +8,7 @@ const fetchSuccess = categories => ({
   type: types.FETCH_SUCCESS,
   payload: categories,
 });
+
 const fetchError = error => ({
   type: types.FETCH_ERROR,
   payload: error,

@@ -1,15 +1,10 @@
 import { createSelector } from 'reselect';
 
-// const getAllMenu = state => state.menu.items;
-
 export const getLoading = state => state.menu.loading;
 
-// export const getMenuItemById = createSelector(
-//   [(state, id) => id, getAllMenu],
-//   (id, menu) => menu.find(item => item.id === Number(id)),
-// );
 const getProductIds = state => state.menu.products;
 
+// const getCategory = state => state.category;
 const getProductsEntities = state => state.entities.products;
 
 // export const getMenuItemById = (state, id) => {

@@ -11,10 +11,22 @@ import { addToCart } from '../../../redux/cart/cartAction';
 const getCategoryFromProps = props =>
   queryString.parse(props.location.search).category;
 
+const getCategoryFromLocation = location => {
+  const { category } = queryString.parse(location.search);
+  return category;
+};
+
 class AllDishesContainer extends Component {
   componentDidMount() {
-    this.props.fetchMenu();
-  }
+    const { fetchMenuByCategories, location, fetchMenu } = this.props;
+    const category = getCategoryFromProps(this.props);
+    // console.log(category);
+    if (category === undefined) {
+      fetchMenu();
+    };
+
+    fetchMenuByCategories(getCategoryFromLocation(location));
+  };
 
   componentDidUpdate(prevProps) {
     const prevCategory = getCategoryFromProps(prevProps);
@@ -26,7 +38,7 @@ class AllDishesContainer extends Component {
     if (nextCategory === undefined) {
       this.props.fetchMenu();
     }
-  }
+  };
 
   render() {
     const { loading, error } = this.props;

@@ -33,9 +33,9 @@ class App extends Component {
             <Route exact path={routes.HOME} component={HomePage} />
             <Route exact path={routes.MENU} component={MenuPage} />
             <Route path={routes.MENU_ITEM} component={MenuItemPage} />
-            <Route path={routes.ABOUT} component={AboutPage} />
-            <Route path={routes.CONTACT} component={ContactPage} />
-            <Route path={routes.DELIVERY} component={DeliveryPage} />
+            <Route exact path={routes.ABOUT} component={AboutPage} />
+            <Route exact path={routes.CONTACT} component={ContactPage} />
+            <Route exact path={routes.DELIVERY} component={DeliveryPage} />
             <ProtectedRoute exact path={routes.CART} component={Cart} />
             <ProtectedRoute path={routes.ACCOUNT} component={AccountPage} />
             <ProtectedRoute path={routes.ORDER_HISTORY} component={OrderHistoryPage} />
