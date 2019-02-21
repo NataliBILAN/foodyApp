@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import AppHeader from './components/AppHeader/AppHeader';
 import HomePage from './pages/HomePage/Home';
-import MenuPage from './pages/MenuPage/Menu';
+import MenuPage from './pages/Menu';
 import MenuItemPage from './pages/Dish';
 import AboutPage from './pages/About';
 import ContactPage from './pages/Contact';

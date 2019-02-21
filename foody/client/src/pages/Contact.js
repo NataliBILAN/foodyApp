@@ -1,9 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import { PageTitle } from '../ui/PageTitle';
 
 const ContactPage = () => (
-  <div>
+  <ContactPageWrap>
     <PageTitle>Contact us</PageTitle>
-  </div>
+  </ContactPageWrap>
 );
+const ContactPageWrap = styled.div`
+  width: 80%;
+  margin: 200px auto 0;
+`;
+
 export default ContactPage;

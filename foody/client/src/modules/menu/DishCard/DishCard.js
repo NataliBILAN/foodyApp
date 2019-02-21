@@ -1,19 +1,28 @@
 import React, { Fragment } from 'react';
-import s from './DishCard.module.css';
+import styled from 'styled-components';
 
-const DishCard = ({ name, description, image, price }) => (
+const DishCard = ({ name, image, price }) => (
   <Fragment>
-    <div className={s.wrapper}>
-      <img src={image} alt={name} className={s.image} />
-    </div>
-
-    <p>{name}</p>
-    <p>{description}</p>
-    <p>Price: {price}</p>
-    {/* <button type="button" onClick={addToCart}>
-      Add to cart
-    </button> */}
+    <DishCardImage src={image} alt={name} />
+    <DishName>{name}</DishName>
+    <DishPrice>Price: {price}</DishPrice>
   </Fragment>
 );
+
+const DishCardImage = styled.img`
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+`;
+
+const DishName = styled.p`
+  color: #5c007a;
+  font-weight: 700;
+  margin-bottom: 15px;
+`;
+
+const DishPrice = styled.p`
+  margin-bottom: 15px;
+`;
 
 export default DishCard;

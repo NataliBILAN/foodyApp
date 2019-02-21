@@ -1,8 +1,8 @@
 import React, { PureComponent, createRef } from 'react';
+import styled from 'styled-components';
 import Dropdown from '../Dropdown/DropdownContainer';
 import image from '../assets/lisa.png';
 import Avatar from '../Avatar/Avatar';
-import s from './UserMenu.module.css';
 
 export default class UserMenu extends PureComponent {
   containerRef = createRef();
@@ -43,16 +43,28 @@ export default class UserMenu extends PureComponent {
     const { name } = this.props;
 
     return (
-      <div
-        className={s.container}
+      <UserMenuWrap
         ref={this.containerRef}
         onClick={this.openDropdown}
       >
         <Avatar image={image} />
 
-        <p className={s.user_name}>{name}</p>
+        <UserName>{name}</UserName>
         {isDropdownOpen && <Dropdown />}
-      </div>
+      </UserMenuWrap>
     );
   }
-}
+};
+
+const UserMenuWrap = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: auto;
+`;
+
+const UserName = styled.p`
+  color: #5c007a;
+  font-size: 16px;
+`;

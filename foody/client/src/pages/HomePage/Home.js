@@ -1,10 +1,12 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import { PageTitle } from '../../ui/PageTitle';
 
 const HomePage = () => (
-  <div>
+  <HomeContentWrap>
     <PageTitle>Doughnut Fun Facts</PageTitle>
-    <p>
+    <HomeContent>
       The internet is full of fabulous facts about everything from current
       events to the history basket weaving and doughnut fun facts. As we
       research for our daily content on food trucks, food carts and street food,
@@ -37,7 +39,17 @@ const HomePage = () => (
       doughnut machine in 1920. The US doughnut industry is worth 3.6 billion
       dollars. The Guinness World record for doughnut eating is held by John
       Haight, who consumed 29 donuts in just over 6 minutes.
-    </p>
-  </div>
+    </HomeContent>
+  </HomeContentWrap>
 );
+
+const HomeContentWrap = styled.div`
+  width: 80%;
+  margin: 200px auto 0;
+`;
+
+const HomeContent = styled.p`
+  line-height: 1.5;
+`;
+
 export default HomePage;

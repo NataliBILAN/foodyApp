@@ -6,7 +6,11 @@ ${reset}
 
 body {
   font-family: 'Patrick Hand';
-  font-size: 18px;
+  font-size: 20px;
+}
+
+a {
+    text-decoration: none;
 }
 `;
 

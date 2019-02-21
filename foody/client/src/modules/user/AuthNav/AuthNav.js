@@ -2,13 +2,26 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
+const AuthNav = () => (
+  <Nav>
+    <Item>
+      <StyledLink to="/signup">Sing up</StyledLink>
+    </Item>
+    <Item>
+      <StyledLink to="/signin">Sing in</StyledLink>
+    </Item>
+  </Nav>
+);
+
 const Nav = styled.ul`
   display: flex;
   list-style: none;
+  align-items:center;
 `;
 
 const Item = styled.li`
   margin-right: 20px;
+
 `;
 
 const StyledLink = styled(NavLink)`
@@ -26,14 +39,5 @@ const StyledLink = styled(NavLink)`
     transition: all 200ms ease;
   }
 `;
-const AuthNav = () => (
-  <Nav>
-    <Item>
-      <StyledLink to="/signup">Sing up</StyledLink>
-    </Item>
-    <Item>
-      <StyledLink to="/signin">Sing in</StyledLink>
-    </Item>
-  </Nav>
-);
+
 export default AuthNav;

@@ -21,6 +21,7 @@ const Nav = styled.ul`
   display: flex;
   list-style: none;
   align-items: center;
+  margin-right: 20px;
 `;
 
 const StyledNavLink = styled(NavLink)`

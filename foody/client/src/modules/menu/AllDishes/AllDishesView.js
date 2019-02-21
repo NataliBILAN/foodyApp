@@ -1,38 +1,53 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import styled from 'styled-components';
+
 import DishCard from '../DishCard/DishCard';
-import s from './AllDishes.module.css';
+import { Button } from '../../../ui/Button'
 
 const AllDishesView = ({ menu = [], match, location, addToCart }) => (
   <>
-    <ul className={s.menu}>
+    <Menu>
       {menu.map(dish => (
-        <li key={dish.id}>
+        <MenuItem key={dish.id}>
           <Link
             to={{
               pathname: `${match.url}/${dish.id}`,
               state: { from: location },
             }}
-            className={s.menu_item}
           >
             <DishCard
               image={dish.image}
               alt={dish.name}
               name={dish.name}
               price={dish.price}
-              // addToCart={() => addToCart(dish.id)}
             />
           </Link>
-          <button
+          <Button
             type="button"
             onClick={() => addToCart(dish.id)}
-            className={s.button}
           >
             Add to cart
-          </button>
-        </li>
+          </Button>
+        </MenuItem>
       ))}
-    </ul>
+    </Menu>
   </>
 );
+
+const Menu = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+const MenuItem = styled.li`
+  flex-basis: 250px;
+  margin-right: 25px;
+  margin-bottom: 20px;
+  border: 1px solid #000;
+  padding: 5px;
+`;
+
 export default withRouter(AllDishesView);
