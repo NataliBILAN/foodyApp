@@ -16,14 +16,14 @@ import PlannerPage from './pages/Planner';
 import SignUpPage from './pages/SingUp';
 import SignInPage from './pages/SignIn';
 import routes from './configs/routes';
-import ProtectedRoute from './components/ProtectedRoute'
+import ProtectedRoute from './components/ProtectedRoute';
 import { refreshCurrentUser } from './redux/auth/authOperations';
-
 
 class App extends Component {
   componentDidMount() {
     this.props.refreshCurrentUser();
   }
+
   render() {
     return (
       <Fragment>
@@ -38,21 +38,23 @@ class App extends Component {
             <Route exact path={routes.DELIVERY} component={DeliveryPage} />
             <ProtectedRoute exact path={routes.CART} component={Cart} />
             <ProtectedRoute path={routes.ACCOUNT} component={AccountPage} />
-            <ProtectedRoute path={routes.ORDER_HISTORY} component={OrderHistoryPage} />
+            <ProtectedRoute
+              path={routes.ORDER_HISTORY}
+              component={OrderHistoryPage}
+            />
             <ProtectedRoute path={routes.PLANNER} component={PlannerPage} />
             <Route exact path={routes.SIGNUP} component={SignUpPage} />
             <Route exact path={routes.SINGIN} component={SignInPage} />
           </Switch>
         </div>
       </Fragment>
-    )
+    );
   }
-
-};
+}
 
 const mapDispatch = { refreshCurrentUser };
 
 export default connect(
   null,
-  mapDispatch
+  mapDispatch,
 )(App);
