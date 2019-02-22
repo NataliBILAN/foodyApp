@@ -1,9 +1,17 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import { PageTitle } from '../ui/PageTitle';
 
 const PlannerPage = () => (
-  <div>
+  <PlannerContentWrap>
     <PageTitle>PlannerPage</PageTitle>
-  </div>
+  </PlannerContentWrap>
 );
+
+const PlannerContentWrap = styled.div`
+  width: 80%;
+  margin: 200px auto 0;
+`;
+
 export default PlannerPage;

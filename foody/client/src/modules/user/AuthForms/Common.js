@@ -16,7 +16,7 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  width: 100%;
+  width: 97%;
   font: inherit;
   padding: 4px;
 `;

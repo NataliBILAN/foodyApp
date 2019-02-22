@@ -1,4 +1,8 @@
 import React from 'react';
+import styled from 'styled-components';
+
+import { Button } from '../../ui/Button';
+import { PageTitle } from '../../ui/PageTitle'
 
 const CartView = ({
   products = [],
@@ -8,35 +12,64 @@ const CartView = ({
   total,
 }) =>
   products.length > 0 ? (
-    <div>
-      <table>
+    <CartContentWrap>
+      <Table>
         <tbody>
           {products.map(({ id, name, amount }) => (
             <tr key={id}>
               <td>{name}</td>
               <td>
-                <button type="button" onClick={() => decrementAmount(id)}>
+                <DecButton type="button" onClick={() => decrementAmount(id)}>
                   -
-                </button>
+                </DecButton>
                 {amount}
-                <button type="button" onClick={() => incrementAmount(id)}>
+                <IncButton type="button" onClick={() => incrementAmount(id)}>
                   +
-                </button>
+                </IncButton>
               </td>
               <td>
-                <button type="button" onClick={() => removeFromCart(id)}>
+                <Button type="button" onClick={() => removeFromCart(id)}>
                   Remove
-                </button>
+                </Button>
               </td>
               <td />
             </tr>
           ))}
         </tbody>
-      </table>
-      <p>Общая сумма: {total}</p>
-    </div>
+      </Table>
+      <Total>Total price: {total}</Total>
+    </CartContentWrap>
   ) : (
-    <h2>Cart is empty!</h2>
-  );
+      <CartPageTitle>Cart is empty!</CartPageTitle>
+    );
+
+const CartContentWrap = styled.div`
+    width: 80%;
+    margin: 200px auto 0;
+`;
+const CartPageTitle = styled(PageTitle)`
+  margin: 200px auto 0;
+`;
+const Table = styled.table`
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid blueviolet;
+  padding: 20px;
+  margin-bottom: 20px;
+`;
+
+const DecButton = styled(Button)`
+margin-right: 20px;
+`;
+
+const IncButton = styled(Button)`
+margin-left: 20px;
+`;
+
+const Total = styled.p`
+  text-transform:uppercase;
+  font-weight:700;
+`;
 
 export default CartView;

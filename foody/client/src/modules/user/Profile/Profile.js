@@ -1,28 +1,47 @@
 import React from 'react';
-import s from './Profile.module.css';
+import styled from 'styled-components';
 
 const Profile = ({ name, phone, email }) => (
-  <div className={s.wrapper}>
-    <div className={s.info}>
-      <div className={s.wrapper_image}>
-        <img src="./images/lisa.png" alt="user avatar" className={s.image} />
-      </div>
-      <p>
+  <ProfileWrap>
+    <ImageWrap>
+      <ProfileImage src="./images/lisa.png" alt="user avatar" />
+    </ImageWrap>
+    <InfoWrap>
+      <Info>
         <b>User name:</b> {name}
-      </p>
-      <p>
-        <b>Contact Information:</b>
-      </p>
-      <p>
-        <b>phone:</b> {phone}
-      </p>
-      <p>
-        <b>e-mail:</b> {email}
-      </p>
-    </div>
-    <div className={s.update}>
-      <h2>Update your data</h2>
-    </div>
-  </div>
+      </Info>
+      <Info>
+        Contact Information:
+      </Info>
+      <Info>
+        Phone: {phone}
+      </Info>
+      <Info>
+        e-mail:{email}
+      </Info>
+    </InfoWrap>
+  </ProfileWrap>
 );
+
+const ProfileWrap = styled.div`
+  display: flex;
+`;
+
+const ImageWrap = styled.div`
+  width: 250px; 
+`;
+
+const InfoWrap = styled.div`
+  display:flex;
+  flex-direction:column;
+`;
+
+const ProfileImage = styled.img`
+  width: 100%;
+`;
+
+const Info = styled.p`
+  padding: 15px;
+`;
+
 export default Profile;

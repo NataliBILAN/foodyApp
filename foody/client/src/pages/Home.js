@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { PageTitle } from '../../ui/PageTitle';
+import { PageTitle } from '../ui/PageTitle';
 
 const HomePage = () => (
   <HomeContentWrap>
